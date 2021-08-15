@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="pRedisHost" elementType="Argument">
+            <stringProp name="Argument.name">pRedisHost</stringProp>
+            <stringProp name="Argument.value">192.168.0.81</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pRedisPort" elementType="Argument">
+            <stringProp name="Argument.name">pRedisPort</stringProp>
+            <stringProp name="Argument.value">6379</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="9999 - Load Redis" enabled="true">
+          <stringProp name="scriptLanguage">beanshell</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import java.util.ArrayList;
+import java.util.List;
+import redis.clients.jedis.*;
+//import redis.clients.jedis.JedisPool;
+//import redis.clients.jedis.JedisPoolConfig;
+//import redis.clients.jedis.Protocol;
+//import redis.clients.jedis.Pipeline;
+import java.text.SimpleDateFormat; 
+import java.util.Date; 
+import java.util.Random;
+import java.text.DecimalFormat;
+import java.io.File;
+import java.text.SimpleDateFormat; 
+import java.util.Date; 
+
+String pRedisHost = vars.get(&quot;pRedisHost&quot;);
+int pRedisPort = Integer.parseInt(vars.get(&quot;pRedisPort&quot;));
+log.info(&quot;-----------------------------------------&quot;);
+JedisPoolConfig config = new JedisPoolConfig();
+JedisPool pool = new JedisPool(config, pRedisHost , pRedisPort);
+Jedis jedis = null;
+jedis = pool.getResource();
+log.info(&quot;Redis ... &quot; + pRedisHost + &quot;:&quot; + pRedisPort);
+log.info(&quot;Redis running... &quot; + jedis.ping());
+
+// setup files to load
+String[] redisSetArray = new String[19];
+redisSetArray[0] = &quot;digital_content_jurisdiction&quot;;
+int arrayCount = 0;
+String redisSetName = &quot;&quot;;
+
+for (int i=0; i&lt;=arrayCount; i++){
+	// Clear accounts
+	redisSetName = redisSetArray[i];
+	log.info(&quot;clearing redis set: &quot; + redisSetName);
+	jedis.del(redisSetName);
+	log.info(&quot;\tcleared file: Count = &quot; + jedis.scard(redisSetName));
+}
+
+jedis.sadd(&quot;testing&quot;, &quot;data&quot;);
+return;
+
+SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy/MM/dd&apos;T&apos;HH:mm:ss&quot;);
+Date date = null;
+String Transaction_Datetime = null;
+
+for (i=0; i&lt;=arrayCount; i++){
+	redisSetName = redisSetArray[i];
+	Pipeline pipeline = jedis.pipelined();
+	try  
+	{  
+		File file=new File(&quot;/Users/tim/Documents/perf_jm_redis_poc/data/&quot; + redisSetName + &quot;.csv&quot;);    //creates a new file instance  
+		FileReader fr=new FileReader(file);   //reads the file  
+		BufferedReader br=new BufferedReader(fr);  //creates a buffering character input stream  
+		StringBuffer sb=new StringBuffer();    //constructs a string buffer with no characters  
+		String line;  
+		date = new Date();
+		Transaction_Datetime = dateFormat.format(date);
+		int recCount = 0;
+	     String outLine;
+		log.info(&quot;loading redis &quot; + redisSetName + &quot; set. Starting at: &quot; + Transaction_Datetime + &quot; ...&quot;);
+		while((line=br.readLine())!=null)  {  
+			log.info(&quot;line: &quot; + line);
+			jedis.sadd(redisSetName, line);
+		} 
+		//pipeline.sync(); 
+		fr.close();    //closes the stream and release the resources  
+		date = new Date();
+		Transaction_Datetime = dateFormat.format(date);
+	
+	}  catch(IOException e)  {  
+		log.info(&quot;error: &quot; + e);
+		e.printStackTrace();  
+	}  
+	log.info(&quot;loaded &quot; + redisSetName + &quot; file: &quot; + jedis.scard(redisSetName) + &quot; finished at &quot; + Transaction_Datetime + &quot; ...&quot;);
+
+}
+log.info(&quot;-----------------------------------------&quot;);  
+
+return;
+
+</stringProp>
+          <stringProp name="TestPlan.comments">	</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

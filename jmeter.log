@@ -1,0 +1,78 @@
+2021-08-15 09:43:49,880 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2021-08-15 09:43:49,894 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.4.1/libexec/bin/user.properties
+2021-08-15 09:43:49,895 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.4.1/libexec/bin/system.properties
+2021-08-15 09:43:49,898 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2021-08-15 09:43:49,898 INFO o.a.j.JMeter: Version 5.4.1
+2021-08-15 09:43:49,898 INFO o.a.j.JMeter: java.version=17
+2021-08-15 09:43:49,899 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2021-08-15 09:43:49,899 INFO o.a.j.JMeter: os.name=Mac OS X
+2021-08-15 09:43:49,899 INFO o.a.j.JMeter: os.arch=aarch64
+2021-08-15 09:43:49,899 INFO o.a.j.JMeter: os.version=11.5.1
+2021-08-15 09:43:49,899 INFO o.a.j.JMeter: file.encoding=UTF-8
+2021-08-15 09:43:49,899 INFO o.a.j.JMeter: java.awt.headless=null
+2021-08-15 09:43:49,899 INFO o.a.j.JMeter: Max memory     =1073741824
+2021-08-15 09:43:49,899 INFO o.a.j.JMeter: Available Processors =8
+2021-08-15 09:43:49,905 INFO o.a.j.JMeter: Default Locale=English (EN)
+2021-08-15 09:43:49,905 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2021-08-15 09:43:49,905 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.4.1/libexec
+2021-08-15 09:43:49,906 INFO o.a.j.JMeter: user.dir  =/Users/tim/Documents/perf_jm_redis_poc
+2021-08-15 09:43:49,906 INFO o.a.j.JMeter: PWD       =/Users/tim/Documents/perf_jm_redis_poc
+2021-08-15 09:43:49,907 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: Timothys-Mac-mini.local FullName: localhost
+2021-08-15 09:43:50,163 INFO o.a.j.JMeter: Setting LAF to: laf:com.apple.laf.AquaLookAndFeel
+2021-08-15 09:43:51,084 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2021-08-15 09:43:51,747 INFO o.j.r.JARSourceHTTP: Found cached repo
+2021-08-15 09:43:51,839 INFO o.j.r.PluginManager: Plugins Status: [jpgc-graphs-basic=2.0, jpgc-casutg=2.9, jpgc-filterresults=2.2, jpgc-plugins-manager=1.6, jpgc-synthesis=2.2, jpgc-csvars=0.1, jmeter-core=5.4.1, jmeter-ftp=5.4.1, jmeter-http=5.4.1, jmeter-jdbc=5.4.1, jmeter-jms=5.4.1, jmeter-junit=5.4.1, jmeter-java=5.4.1, jmeter-ldap=5.4.1, jmeter-mail=5.4.1, jmeter-mongodb=5.4.1, jmeter-native=5.4.1, jmeter-tcp=5.4.1, jmeter-components=5.4.1]
+2021-08-15 09:43:52,961 WARN o.a.j.g.ObjectTableModel: Header count=13 but classes count=11
+2021-08-15 09:43:52,962 WARN o.a.j.g.ObjectTableModel: Header count=13 but writeFunctor count=11
+2021-08-15 09:44:06,055 INFO o.a.j.s.FileServer: Default base='/Users/tim/Documents/perf_jm_redis_poc'
+2021-08-15 09:44:06,058 INFO o.a.j.g.a.Load: Loading file: /Users/tim/Documents/perf_jm_redis_poc/perf_jm_redis_poc.jmx
+2021-08-15 09:44:06,058 INFO o.a.j.s.FileServer: Set new base='/Users/tim/Documents/perf_jm_redis_poc'
+2021-08-15 09:44:06,151 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2021-08-15 09:44:06,155 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2021-08-15 09:44:06,156 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2021-08-15 09:44:06,156 INFO o.a.j.s.SaveService: Loading file: /Users/tim/Documents/perf_jm_redis_poc/perf_jm_redis_poc.jmx
+2021-08-15 09:44:06,257 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2021-08-15 09:44:06,257 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2021-08-15 09:44:06,257 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2021-08-15 09:44:06,257 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2021-08-15 09:44:06,330 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser
+2021-08-15 09:44:06,471 INFO o.a.j.s.FileServer: Set new base='/Users/tim/Documents/perf_jm_redis_poc'
+2021-08-15 09:44:08,632 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2021-08-15 09:44:08,633 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-08-15 09:44:08,633 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-08-15 09:44:08,634 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2021-08-15 09:44:08,634 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2021-08-15 09:44:08,660 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2021-08-15 09:44:08,663 INFO o.a.j.e.StandardJMeterEngine: Starting setUp thread groups
+2021-08-15 09:44:08,663 INFO o.a.j.e.StandardJMeterEngine: Starting setUp ThreadGroup: 1 : setUp Thread Group 
+2021-08-15 09:44:08,663 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group setUp Thread Group.
+2021-08-15 09:44:08,663 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2021-08-15 09:44:08,663 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2021-08-15 09:44:08,665 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2021-08-15 09:44:08,665 INFO o.a.j.e.StandardJMeterEngine: Waiting for all setup thread groups to exit
+2021-08-15 09:44:08,666 INFO o.a.j.t.JMeterThread: Thread started: setUp Thread Group 1-1
+2021-08-15 09:44:08,696 INFO o.a.j.p.j.s.J.9999 - Load Redis: -----------------------------------------
+2021-08-15 09:44:08,707 INFO o.a.j.p.j.s.J.9999 - Load Redis: Redis ... 192.168.0.81:6379
+2021-08-15 09:44:08,720 INFO o.a.j.p.j.s.J.9999 - Load Redis: Redis running... PONG
+2021-08-15 09:44:08,723 INFO o.a.j.p.j.s.J.9999 - Load Redis: clearing redis set: digital_content_jurisdiction
+2021-08-15 09:44:08,727 INFO o.a.j.p.j.s.J.9999 - Load Redis: 	cleared file: Count = 0
+2021-08-15 09:44:08,729 ERROR o.a.j.p.j.s.JSR223Sampler: Problem in JSR223 script 9999 - Load Redis, message: javax.script.ScriptException: Sourced file: inline evaluation of: ``import java.util.ArrayList; import java.util.List; import redis.clients.jedis.*; . . . '' : Error in method invocation: Method sadd( java.lang.String, java.lang.String ) not found in class'redis.clients.jedis.Jedis' : at Line: 40 : in file: inline evaluation of: ``import java.util.ArrayList; import java.util.List; import redis.clients.jedis.*; . . . '' : jedis .sadd ( "testing" , "data" ) 
+ in inline evaluation of: ``import java.util.ArrayList; import java.util.List; import redis.clients.jedis.*; . . . '' at line number 40
+javax.script.ScriptException: Sourced file: inline evaluation of: ``import java.util.ArrayList; import java.util.List; import redis.clients.jedis.*; . . . '' : Error in method invocation: Method sadd( java.lang.String, java.lang.String ) not found in class'redis.clients.jedis.Jedis' : at Line: 40 : in file: inline evaluation of: ``import java.util.ArrayList; import java.util.List; import redis.clients.jedis.*; . . . '' : jedis .sadd ( "testing" , "data" ) 
+ in inline evaluation of: ``import java.util.ArrayList; import java.util.List; import redis.clients.jedis.*; . . . '' at line number 40
+	at bsh.engine.BshScriptEngine.evalSource(BshScriptEngine.java:93) ~[bsh-2.0b6.jar:2.0b6 2016-02-05 05:16:19]
+	at bsh.engine.BshScriptEngine.eval(BshScriptEngine.java:46) ~[bsh-2.0b6.jar:2.0b6 2016-02-05 05:16:19]
+	at javax.script.AbstractScriptEngine.eval(AbstractScriptEngine.java:231) ~[java.scripting:?]
+	at org.apache.jmeter.util.JSR223TestElement.processFileOrScript(JSR223TestElement.java:219) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.protocol.java.sampler.JSR223Sampler.sample(JSR223Sampler.java:72) [ApacheJMeter_java.jar:5.4.1]
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638) [ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558) [ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489) [ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256) [ApacheJMeter_core.jar:5.4.1]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2021-08-15 09:44:08,732 INFO o.a.j.t.JMeterThread: Thread is done: setUp Thread Group 1-1
+2021-08-15 09:44:08,732 INFO o.a.j.t.JMeterThread: Thread finished: setUp Thread Group 1-1
+2021-08-15 09:44:08,732 INFO o.a.j.e.StandardJMeterEngine: All Setup Threads have ended
+2021-08-15 09:44:08,762 INFO o.a.j.e.StandardJMeterEngine: No enabled thread groups found
+2021-08-15 09:44:08,762 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2021-08-15 09:44:08,762 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
